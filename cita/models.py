@@ -16,8 +16,7 @@ class Medico(models.Model):
     especialidad     = models.CharField(max_length=25)
     telefono         = models.CharField(max_length=10)
     fecha_nacimiento = models.DateField()
-    pacientes = models.ManyToManyField(Paciente, through='Cita')
-
+    
     def __str__(self):
         return self.nombre
 
