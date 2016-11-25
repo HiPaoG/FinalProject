@@ -8,7 +8,7 @@ class Paciente(models.Model):
     sexo      = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre + ' ' + self.apellido
 
 class Medico(models.Model):
     nombre           = models.CharField(max_length=30)
@@ -16,11 +16,11 @@ class Medico(models.Model):
     especialidad     = models.CharField(max_length=25)
     telefono         = models.CharField(max_length=10)
     fecha_nacimiento = models.DateField()
-    
-    def __str__(self):
-        return self.nombre
 
-class Cita (models.Model):
+    def __str__(self):
+        return self.nombre + ' ' + self.apellido
+
+class Cita(models.Model):
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     fecha = models.CharField(max_length=12, blank=False, null=True)

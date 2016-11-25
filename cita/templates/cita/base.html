@@ -4,14 +4,39 @@
         <title>Clínica Médica</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cita.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
       <div class="page-header">
-         <a href="{% url 'cita.views.ListaCita' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+         <a class="top-menu"><span class="glyphicon glyphicon-cog"></span></a>
         <h1><a href="/">Clínica Médica</a></h1>
+
+        <div class="header">
+        <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+          <ul class="nav">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/">Citas</a>
+              <ul>
+                <li><a href="{% url 'NuevaCita' %}">Agregar Cita</a></li>
+              </ul>
+            </li>
+            <li><a href="/pacientes/">Pacientes</a>
+              <ul>
+                <li><a href="{% url 'NuevoPaciente' %}">Agregar Paciente</a></li>
+              </ul>
+            </li>
+            <li><a href="/medicos/">Médicos</a>
+              <ul>
+                <li><a href="{% url 'NuevoMedico' %}">Agregar Médico</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </div>
+
       </div>
+
       <div class="content container">
         <div class="row">
           <div class="col-md-8">

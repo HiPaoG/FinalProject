@@ -1,0 +1,16 @@
+{% extends 'cita/base.html' %}
+{% block content %}
+<a class="btn btn-default" href="{% url 'NuevaCita' %}"><span class="glyphicon glyphicon-plus"> NuevaCita</span></a>
+    <div class="post">
+      {% if citas.paciente %}
+      {% endif %}
+       <h1>Nombre paciente: {{ citas.paciente }}</h1>
+       <h3>Nombre médico: {{ citas.medico }}</h3>
+       <h4>Fecha de la cita: {{ citas.fecha }}</h4>
+       <h4>Hora de la cita: {{ citas.hora }}</h4>
+       <p>Observaciones: {{ citas.observaciones }}</p>
+       <p>{{ citas.texto|linebreaksbr }}</p>
+    </div>
+<a class="btn btn-default" href="{% url 'EditarCita' pk=citas.pk %}"><span class="glyphicon glyphicon-pencil"> EditarCita</span></a>
+<a class="btn btn-default" href="{% url 'EliminarCita' pk=citas.pk %}"><span class="glyphicon glyphicon-remove"> EliminarCita</span></a>
+{% endblock %}
